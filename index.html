@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mass Mail Dispatcher</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+
+    <script>
+        var wow = new WOW({
+            boxClass: 'wow',
+            animateClass: 'animated',
+            offset: 0,
+            mobile: true,
+            live: true,
+            callback: function (box) {
+            },
+            scrollContainer: null,
+            resetAnimation: true,
+        });
+        wow.init();
+    </script>
+
+
+</head>
+
+<body>
+    <nav>
+        <h1 id="head">📧 MailMaster</h1>
+    </nav>
+
+    <div class="bg">
+        <div class="container">
+
+
+            <h1 id="head">Mass Mail Dispatcher</h1>
+            <div class="content"> 
+                <form onsubmit="sendEmail(); return false;">
+                    <input type="text" id="from" placeholder="From" required>
+                    <input type="email" id="to" placeholder="To" required>
+                    <input type="text" id="subject" placeholder="Subject" required>
+                    <textarea id="msg" rows="8" placeholder="Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+
+                <div class="file-selector">
+                    <label for="upload">Select a CSV file:</label>
+                    <input type="file" id="upload" accept="text/csv">
+                </div>
+            </div>
+        </div>
+
+
+        <hr>
+
+        <div class="tables">
+            <div class="valTab">
+                <table id="val">
+                    <tr>
+                        <td>
+                            <h2>Valid Email IDs: <span id="validcount"></span></h2>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="InvalTab">
+                <table id="inval">
+                    <tr>
+                        <td>
+                            <h2>Invalid Email IDs: <span id="invalidcount"></span></h2>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <hr>
+
+    <div class="footer-basic">
+        <footer>
+            <p class="copyright">Made by <a href="https://www.linkedin.com/in/pradnya-bornar-2050b622b">Pradnya
+                    Bornar</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>
