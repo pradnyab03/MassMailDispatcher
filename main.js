@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Email.send({
       Host: 'smtp.elasticemail.com',
       Username: 'bornarpradnya1000@gmail.com',
-      Password: '657829d9-c9f4-4b9a-8dd6-8324',
+      Password: '-------',
       To: 'pradnyab227@gmail.com',
       From: document.querySelector('#from').value,
       Subject: document.querySelector('#subject').value,
